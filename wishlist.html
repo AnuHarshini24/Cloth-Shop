@@ -1,0 +1,26 @@
+<h2>Your Wishlist</h2>
+
+<div id="wish"></div>
+
+<script>
+
+let wish=JSON.parse(localStorage.getItem("wishlist"))||[]
+
+let container=document.getElementById("wish")
+
+wish.forEach(p=>{
+
+container.innerHTML+=`
+
+<div class="card">
+
+<img src="${p.image}">
+<h3>${p.name}</h3>
+
+</div>
+
+`
+
+})
+
+</script>

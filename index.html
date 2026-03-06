@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rekha Aadaiyagam</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+<h1>Rekha Aadaiyagam</h1>
+<nav>
+    <input type="text" id="searchBar" placeholder="Search dress...">
+<a href="products.html">Products</a>
+<a href="wishlist.html">❤️ Wishlist</a>
+<a href="cart.html">🛒 Cart</a>
+<a href="register.html">Register</a>
+<a href="admin.html">User</a>
+</nav>
+</header>
+
+<center>
+<h2>Welcome to Our Fashion Store 👗</h2>
+<a href="products.html"></a>
+</center>
+
+
+<h2>New Collection</h2>
+
+<div id="collection" class="products"></div>
+
+<script src="js/products.js"></script>
+<script>
+
+let container=document.getElementById("collection")
+
+products.slice(0,10).forEach(p=>{
+
+container.innerHTML+=`
+
+<div class="card">
+
+<img src="${p.image}">
+<h3>${p.name}</h3>
+<p>₹${p.price}</p>
+
+<button onclick="addToCart(${p.id})">Add to Cart</button>
+<button onclick="addToWishlist(${p.id})">Wishlist</button>
+<button onclick="buyNow(${p.id})">Buy Now</button>
+
+</div>
+
+`
+
+})
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Products</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+<h1>Products</h1>
+</header>
+
+<div class="products" id="productContainer"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist.js"></script>
+
+<script>
+let container = document.getElementById("productContainer");
+
+products.forEach(p=>{
+container.innerHTML += `
+<div class="card">
+<img src="${p.image}">
+<h3>${p.name}</h3>
+<p>₹${p.price}</p>
+<button onclick="addToCart(${p.id})">Add to Cart</button>
+<button onclick="addToWishlist(${p.id})">Wishlist</button>
+<button onclick="buyNow(${p.id})">Buy Now</button>
+</div>
+`;
+});
+</script>
+
+</body>
+</html>
