@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Search Result</title>
+
+</head>
+
+<body>
+
+<h2>Search Result</h2>
+
+<div id="result"></div>
+
+<script>
+
+let product = JSON.parse(localStorage.getItem("searchResult"));
+
+let container = document.getElementById("result");
+
+if(product){
+
+container.innerHTML = `
+<img src="${product.image}" width="200">
+
+<h3>${product.name}</h3>
+
+<p>Price ₹${product.price}</p>
+
+<button onclick="buyNow(${product.id})">Buy Now</button>
+`;
+
+}else{
+
+container.innerHTML="<h3>Product not found</h3>";
+
+}
+
+let user = localStorage.getItem("user");
+
+if(user){
+
+document.getElementById("registerBtn").style.display="none";
+
+}
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
